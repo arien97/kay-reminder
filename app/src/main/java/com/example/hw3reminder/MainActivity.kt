@@ -29,6 +29,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import java.util.*
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -158,6 +159,20 @@ fun ReminderApp() {
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(text = "Set Reminder")
+                }
+                Spacer(modifier = Modifier.height(16.dp))
+
+                Button(
+                    onClick = {
+                        reminderMessage = TextFieldValue("")
+                        selectedDate = ""
+                        selectedTime = ""
+                        snackbarMessage = "Reminder has been cleared."
+                        showSnackbar = true
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(text = "Clear Reminder")
                 }
             }
         }
